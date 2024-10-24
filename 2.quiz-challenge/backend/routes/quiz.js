@@ -1,26 +1,24 @@
-// backend/routes/quiz.js
 const express = require('express');
 const router = express.Router();
 
-// Sample quiz questions
 const questions = [
   {
     id: 1,
-    question: 'What is the capital of France?',
-    options: ['Berlin', 'Madrid', 'Paris', 'Rome'],
-    answer: 'Paris',
+    question: 'What is the capital of Maharashtra?',
+    options: ['Nagpur', 'Pune', 'Mumbai', 'Dadar'],
+    answer: 'Mumbai',
   },
   {
     id: 2,
-    question: 'Which planet is known as the Red Planet?',
+    question: 'Which planet is the biggest planet in solar system?',
     options: ['Earth', 'Mars', 'Jupiter', 'Saturn'],
-    answer: 'Mars',
+    answer: 'Jupiter',
   },
   {
     id: 3,
-    question: 'What is 2 + 2?',
-    options: ['3', '4', '5', '6'],
-    answer: '4',
+    question: 'What is the currency of america?',
+    options: ['dinar', 'dollar', 'pounds', 'rupees'],
+    answer: 'dollar',
   },
   {
     id: 4,
@@ -30,13 +28,12 @@ const questions = [
   },
   {
     id: 5,
-    question: 'Who wrote "To be, or not to be"?',
-    options: ['Shakespeare', 'Hemingway', 'Dickens', 'Tolstoy'],
-    answer: 'Shakespeare',
+    question: 'Who wrote invented zero?',
+    options: ['Newton', 'Einstein', 'Aryabhatta', 'Ramanaujan'],
+    answer: 'Aryabhatta',
   },
 ];
 
-// GET route to fetch quiz questions
 router.get('/', (req, res) => {
   res.json(questions);
 });

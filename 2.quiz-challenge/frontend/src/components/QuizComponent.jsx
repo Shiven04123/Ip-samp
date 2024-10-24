@@ -17,13 +17,15 @@ const Quiz = () => {
   }, []);
 
   const handleAnswer = (answer) => {
-    setUserAnswers([...userAnswers, answer]);
+    // Immediately append the current answer to userAnswers
+    const updatedAnswers = [...userAnswers, answer];
+    setUserAnswers(updatedAnswers);
 
     if (currentQuestionIndex + 1 < questions.length) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      // Calculate score
-      const calculatedScore = userAnswers.reduce((score, answer, index) => {
+      // Calculate score using the updated answers array
+      const calculatedScore = updatedAnswers.reduce((score, answer, index) => {
         return score + (answer === questions[index].answer ? 1 : 0);
       }, 0);
       setScore(calculatedScore);
