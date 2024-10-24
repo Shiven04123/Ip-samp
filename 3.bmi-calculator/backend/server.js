@@ -8,7 +8,6 @@ const PORT = 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// BMI Calculation Route
 app.post('/api/calculate-bmi', (req, res) => {
   const { weight, height } = req.body;
   
